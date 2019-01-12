@@ -1,0 +1,105 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+    <title>公益伞</title>
+    <meta charset="utf-8" />
+    <link rel="preload" href="https://cdn.bootcss.com/react/16.0.0/umd/react.development.js" as="script" />
+    <link rel="preload" href="https://cdn.bootcss.com/react-dom/16.0.0/umd/react-dom.development.js" as="script" />
+    <link rel="preload" href="https://cdn.bootcss.com/babel-standalone/6.26.0/babel.js" as="script" />
+    <link rel="preload" href="https://cdn.bootcss.com/jquery/3.2.1/jquery.js" as="script" />
+    <link rel="preload" href="js/_footer.js" as="script" />
+    <link href="css/weui.min.css" rel="stylesheet" />
+    <link href="css/WeChat.css" rel="stylesheet" />
+    <!--<script type="text/javascript">
+        var useragent = navigator.userAgent;
+        if (useragent.match(/MicroMessenger/i) != 'MicroMessenger') window.location.href = 'https://open.weixin.qq.com/connect/oauth2/authorize?appid=APPID&connect_redirect=1#wechat_redirect';
+    </script>-->
+</head>
+<body>
+    <div class="page input js_show">
+        <div class="page__hd">
+            <h1 class="page__title">还伞</h1>
+            <p class="page__desc">公益伞借还伞系统</p>
+        </div>
+        <div class="weui-cells weui-cells_form">
+            <div class="weui-cell">
+                <div class="weui-cell__hd"><label class="weui-label">姓名</label></div>
+                <div class="weui-cell__bd">
+                    <input class="weui-input" type="text" id="Name" placeholder="请输入姓名" />
+                </div>
+            </div>
+
+            <div class="weui-cell">
+                <div class="weui-cell__hd"><label class="weui-label">手机号</label></div>
+                <div class="weui-cell__bd">
+                    <input class="weui-input" type="tel" id="Tel" placeholder="请输入手机号（长号）" />
+                </div>
+            </div>
+
+            <div class="weui-cell">
+                <div class="weui-cell__hd"><label class="weui-label">伞编号</label></div>
+                <div class="weui-cell__bd">
+                    <input class="weui-input" type="text" id="San_ID" placeholder="例如：Q-001" />
+                </div>
+            </div>
+
+            <div class="weui-cell__bd weui-cell weui-cell_select weui-cell_select-after">
+                <div class="weui-cell__hd"><label class="weui-label">还伞点</label></div>
+                <div class="weui-cell__bd">
+                    <select class="weui-select" name="Located" id="Located">
+                        <option selected disabled>===请选择===</option>
+                        <option value="凤翔宿管">凤翔宿管</option>
+                        <option value="18栋宿管">18栋宿管</option>
+                        <option value="16栋宿管">16栋宿管</option>
+                        <option value="香晖AB宿管">香晖AB宿管</option>
+                        <option value="香晖CD宿管">香晖CD宿管</option>
+                        <option value="10栋宿管">10栋宿管</option>
+                        <option value="厚德楼A栋大厅">厚德楼A栋大厅</option>
+                        <option value="四栋一楼楼梯口">四栋一楼楼梯口</option>
+                        <option value="岐头二楼餐厅门口">岐头二楼餐厅门口</option>
+                        <option value="香山二楼餐厅门口">香山二楼餐厅门口</option>
+                        <option value="龙腾一楼餐厅门口">龙腾一楼餐厅门口</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="weui-cell__bd weui-cell weui-cell_select weui-cell_select-after">
+                <div class="weui-cell__hd"><label class="weui-label">雨伞情况</label></div>
+                <div class="weui-cell__bd">
+                    <select name="Status" id="Status" class="weui-select">
+                        <option selected disabled>===请选择===</option>
+                        <option value="状况良好">状况良好</option>
+                        <option value="轻微损坏">轻微损坏</option>
+                        <option value="严重损坏">严重损坏</option>
+                    </select>
+                </div>
+            </div>
+
+        </div>
+
+        <label for="weuiAgree" class="weui-agree" style="margin-top:1.6em;">
+            <input id="weuiAgree" type="checkbox" class="weui-agree__checkbox" value="1" checked="checked">
+            <span class="weui-agree__text">
+                &nbsp;&nbsp;如果您继续操作，则表明您已充分理解并认同《<a href="./About/Agreement.html">公益伞使用协议</a>》与《<a href="./About/UserData.html">个人信息采集条例</a>》
+                ，并保证所有信息均是真实有效的。如果出现有违约行为，本人愿意承担相应处理措施。
+            </span>
+        </label>
+
+        <div class="weui-btn-area" id="mark"><a class="weui-btn weui-btn_primary" href="javascript:;" onclick="Give_Back()">确定</a></div>
+
+        <div id="_loadmore_dot"></div>
+        <div id="_footer"></div>
+    </div>
+
+    <div id="_loadingToast"></div>
+
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.js"></script>
+    <script src="https://cdn.bootcss.com/react/16.0.0/umd/react.development.js"></script>
+    <script src="https://cdn.bootcss.com/react-dom/16.0.0/umd/react-dom.development.js"></script>
+    <script src="https://cdn.bootcss.com/babel-standalone/6.26.0/babel.js"></script>
+    <script src="js/_footer.js" type="text/babel"></script>
+    <script src="js/Demo.js"></script>
+</body>
+</html>

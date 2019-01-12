@@ -1,0 +1,23 @@
+﻿{
+  "version": "0.7.01",
+  "statement": "简要用伞需知：\n     1.每人限借一把公益伞并且需在一天内归还到还伞点。\n     2.诚信借伞，有借有还；在借还伞时需自觉进行微信登记。\n     具体内容参见《公益伞使用协议》。",
+  "footer": {
+    "footer_text": [],
+    "footer_link": [
+      {
+        "href": "https://reactjs.org/",
+        "img": {
+          "href": "https://reactjs.org.cn/asset/img/logo.svg",
+          "width": "22"
+        }
+      },
+      {
+        "href": "https://developer.mozilla.org/zh-CN/",
+        "img": {
+          "href": "https://cdn.mdn.mozilla.net/static/img/opengraph-logo.72382e605ce3.png",
+          "width": "22"
+        }
+      }
+    ]
+  }
+}
